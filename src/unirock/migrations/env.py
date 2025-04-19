@@ -1,12 +1,14 @@
 import asyncio
 from logging.config import fileConfig
 
-from settings import PostgresSettings
 from sqlalchemy import pool
 from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import async_engine_from_config
 
 from alembic import context
+from settings import PostgresSettings
+
+from core.entity._base import Base
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -20,7 +22,7 @@ if config.config_file_name is not None:
 # add your model's MetaData object here
 # for 'autogenerate' support
 
-target_metadata = None
+target_metadata = Base.metadata
 db_settings = PostgresSettings()  # type: ignore
 config.set_section_option("alembic", "sqlalchemy.url", db_settings.dsn)
 

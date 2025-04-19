@@ -2,9 +2,9 @@ from amo import AmoClient
 from amo.schema.response import AmoPipelineResponseDto
 from amo.service import InternalSyncService
 from fastapi import APIRouter
-from shared.repository.database.connection import AsyncDBSession
+from shared.clients.database import AsyncDBSession
 
-router = APIRouter()
+router = APIRouter(prefix="/sync")
 
 
 @router.post(

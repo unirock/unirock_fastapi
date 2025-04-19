@@ -5,7 +5,7 @@ from . import InternalLeadService
 from ...schema.external.ExternalWebhookEventDto import ExternalWebhookEventDto, ExternalWebhookLeadEventDto
 
 from shared.broker import broker
-from shared.repository.database.connection import AsyncDBSession
+from shared.clients.database import AsyncDBSession
 
 
 class InternalAmoLeadEventService:
@@ -42,6 +42,6 @@ class InternalAmoLeadEventService:
             await self.process_create(webhook_content.root)
 
 
-@broker.subscriber("amo_webhooks")
+@broker.subscriber(stream="amo_webhooks")
 async def handle_webhook(webhook: ExternalWebhookEventDto, db_session: AsyncDBSession):
     await InternalAmoLeadEventService(db_session).process_webhook(webhook)

@@ -6,7 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/unirock" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources" />
     </content>
-    <orderEntry type="jdk" jdkName="Poetry (bible)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.13 (bible)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

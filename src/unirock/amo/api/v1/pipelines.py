@@ -1,9 +1,9 @@
 from amo.schema.response import AmoPipelineResponseDto
 from amo.service import InternalPipelineService
 from fastapi import APIRouter
-from shared.repository.database.connection import AsyncDBSession
+from shared.clients.database import AsyncDBSession
 
-router = APIRouter()
+router = APIRouter(prefix="/pipelines")
 
 
 @router.get("/")

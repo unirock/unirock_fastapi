@@ -12,10 +12,10 @@ class SystemEventRepository(AbstractDatabaseRepository):
 
     async def create(self, create_dto: SystemEventCreateDto) -> SystemEvent:
         new_object: SystemEvent = create_dto.to_db_object(SystemEvent)
-        query = insert(new_object).returning(SystemEvent)
-        created_event = await self.session.scalar(query)
-        await self.session.commit()
-        return created_event
+        # query = insert(SystemEvent).values(new_object).returning(SystemEvent)
+        # created_event = await self.session.scalar(query)
+        # await self.session.commit()
+        # return created_event
 
 
     async def vacuum(self, to_date: date):

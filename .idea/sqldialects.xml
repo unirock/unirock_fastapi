@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/alembic/versions/18169208b2d5_alter_status_pk.py" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/unirock/migrations/versions/18169208b2d5_alter_status_pk.py" dialect="GenericSQL" />
     <file url="PROJECT" dialect="PostgreSQL" />
   </component>
 </project>

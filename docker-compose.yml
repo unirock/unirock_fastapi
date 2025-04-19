@@ -1,0 +1,9 @@
+services:
+  app:
+    image: bible:latest
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+#    command:
+#      - "fastapi run --host 0.0.0.0 --port 8080 /app/.venv/lib/python3.13/site-packages/bible"
